@@ -3,174 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rushikesh Satkar</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Reference to the external CSS file -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-2pIyrEe6y8RDrAd7e8Zc7+52J+5O7ZRN5Fv6gdO3UIZ7QOz4MFX1I73tTF6DJIlBQ7Mclj3kH/Z3zqId8c8H6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Font Awesome CDN for icons -->
-    <style>
-        /* Light Mode Styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 1rem 0;
-            text-align: right;
-        }
-
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header h1 {
-            margin: 0;
-        }
-
-        nav {
-            text-align: right;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            padding: 0 1rem;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
-
-        #about, #projects, #contact {
-            padding: 2rem 0;
-        }
-
-        #about img {
-            float: left;
-            margin-right: 2rem;
-            border-radius: 50%;
-        }
-
-        #about div {
-            overflow: hidden;
-        }
-
-        #projects .project {
-            background: #fff;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        #contact form {
-            background: #fff;
-            padding: 1rem;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        #contact form div {
-            margin-bottom: 1rem;
-        }
-
-        #contact form div label {
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        #contact form div input, #contact form div textarea {
-            width: 100%;
-            padding: 0.5rem;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1rem 0;
-        }
-
-        .social-icons {
-            margin-top: 1rem;
-        }
-
-        .social-icon {
-            display: inline-block;
-            color: #fff;
-            font-size: 1.5rem;
-            margin-right: 1rem;
-        }
-
-        .social-icon:hover {
-            color: #bbb;
-        }
-
-        /* Dark Mode Styles */
-        body.dark-mode {
-            background-color: #333;
-            color: #f4f4f4;
-        }
-
-        body.dark-mode header {
-            background-color: #222;
-        }
-
-        body.dark-mode nav a {
-            color: #f4f4f4;
-        }
-
-        body.dark-mode #projects .project {
-            background: #444;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        }
-
-        body.dark-mode #contact form {
-            background: #444;
-        }
-
-        body.dark-mode footer {
-            background-color: #222;
-        }
-
-        body.dark-mode .social-icon {
-            color: #f4f4f4;
-        }
-
-        body.dark-mode .social-icon:hover {
-            color: #bbb;
-        }
-
-        /* Toggle Button */
-        .theme-toggle {
-            background: none;
-            border: none;
-            color: #fff;
-            font-size: 1.5rem;
-            cursor: pointer;
-            outline: none;
-        }
-
-        .theme-toggle:focus {
-            outline: none;
-        }
-    </style>
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
@@ -181,90 +15,66 @@
                 <a href="#projects">Projects</a>
                 <a href="#contact">Contact</a>
             </nav>
-            <button class="theme-toggle" aria-label="Toggle theme">
-                <i class="fas fa-moon"></i> <!-- Moon icon for dark mode -->
-            </button>
+            <div class="theme-toggle">
+                <input type="checkbox" id="toggle" />
+                <label for="toggle" class="slider">
+                    <span class="fa fa-sun"></span>
+                    <span class="fa fa-moon"></span>
+                </label>
+            </div>
         </div>
     </header>
-
-    <div class="container" id="about">
-        <h2>About Me</h2>
-        <img src="profile.jpg" alt="My Profile Picture" width="150">
-        <div>
-            <p>Hello! I'm a .NET backend developer with over 2 years of experience. I specialize in creating efficient and scalable backend systems. In my recent internship, I worked on .NET Core API development and created the backend of a Domino's-like website.</p>
-        </div>
+    <div class="container">
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <img src="profile.jpg" alt="Profile Picture" width="150" height="150">
+            <div>
+                <p>Hello! I'm Rushikesh Satkar, a passionate web developer with experience in creating dynamic and responsive websites. I specialize in .NET technologies and have worked on various projects that leverage modern development practices.</p>
+                <p>With a strong foundation in backend development, I enjoy solving complex problems and delivering high-quality solutions. In my free time, I like to stay updated with the latest technology trends and explore new tools and techniques.</p>
+            </div>
+        </section>
+        
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project">
+                <h3>Project One</h3>
+                <p>Description of project one, detailing the technologies used and the challenges faced.</p>
+            </div>
+            <div class="project">
+                <h3>Project Two</h3>
+                <p>Description of project two, including key features and any notable achievements.</p>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form action="submit_form.php" method="POST">
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <div>
+                    <input type="submit" value="Send Message">
+                </div>
+            </form>
+        </section>
     </div>
-
-    <div class="container" id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Project 1</h3>
-            <p>Description of the first project.</p>
-        </div>
-        <div class="project">
-            <h3>Project 2</h3>
-            <p>Description of the second project.</p>
-        </div>
-        <!-- Add more projects as needed -->
-    </div>
-
-    <div class="container" id="contact">
-        <h2>Contact Me</h2>
-        <form action="submit_form.php" method="post">
-            <div>
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div>
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div>
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-            </div>
-            <div>
-                <input type="submit" value="Send">
-            </div>
-        </form>
-    </div>
-
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Rushikesh Satkar</p>
-            <div class="social-icons">
-                <a href="https://github.com/yourusername" class="social-icon"><i class="fab fa-github"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-            </div>
+        <div class="social-icons">
+            <a href="https://github.com/yourusername" target="_blank" class="social-icon fa fa-github"></a>
         </div>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const themeToggleButton = document.querySelector('.theme-toggle');
-            const body = document.body;
-
-            // Check for saved theme in localStorage
-            if (localStorage.getItem('theme') === 'dark') {
-                body.classList.add('dark-mode');
-                themeToggleButton.querySelector('i').classList.replace('fa-moon', 'fa-sun');
-            }
-
-            // Toggle theme on button click
-            themeToggleButton.addEventListener('click', () => {
-                if (body.classList.contains('dark-mode')) {
-                    body.classList.remove('dark-mode');
-                    themeToggleButton.querySelector('i').classList.replace('fa-sun', 'fa-moon');
-                    localStorage.setItem('theme', 'light');
-                } else {
-                    body.classList.add('dark-mode');
-                    themeToggleButton.querySelector('i').classList.replace('fa-moon', 'fa-sun');
-                    localStorage.setItem('theme', 'dark');
-                }
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
