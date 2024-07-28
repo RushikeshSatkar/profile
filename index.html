@@ -7,11 +7,175 @@
     <link rel="stylesheet" href="styles.css"> <!-- Reference to the external CSS file -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-2pIyrEe6y8RDrAd7e8Zc7+52J+5O7ZRN5Fv6gdO3UIZ7QOz4MFX1I73tTF6DJIlBQ7Mclj3kH/Z3zqId8c8H6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Font Awesome CDN for icons -->
+    <style>
+        /* Light Mode Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: right;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            text-align: right;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0 1rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        #about, #projects, #contact {
+            padding: 2rem 0;
+        }
+
+        #about img {
+            float: left;
+            margin-right: 2rem;
+            border-radius: 50%;
+        }
+
+        #about div {
+            overflow: hidden;
+        }
+
+        #projects .project {
+            background: #fff;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #contact form {
+            background: #fff;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #contact form div {
+            margin-bottom: 1rem;
+        }
+
+        #contact form div label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        #contact form div input, #contact form div textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .social-icons {
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            display: inline-block;
+            color: #fff;
+            font-size: 1.5rem;
+            margin-right: 1rem;
+        }
+
+        .social-icon:hover {
+            color: #bbb;
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #333;
+            color: #f4f4f4;
+        }
+
+        body.dark-mode header {
+            background-color: #222;
+        }
+
+        body.dark-mode nav a {
+            color: #f4f4f4;
+        }
+
+        body.dark-mode #projects .project {
+            background: #444;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        body.dark-mode #contact form {
+            background: #444;
+        }
+
+        body.dark-mode footer {
+            background-color: #222;
+        }
+
+        body.dark-mode .social-icon {
+            color: #f4f4f4;
+        }
+
+        body.dark-mode .social-icon:hover {
+            color: #bbb;
+        }
+
+        /* Toggle Button */
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .theme-toggle:focus {
+            outline: none;
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Rushikesh Satkar</h1> <!-- Updated headline -->
+            <h1>Rushikesh Satkar</h1>
             <nav>
                 <a href="#about">About</a>
                 <a href="#projects">Projects</a>
@@ -77,6 +241,30 @@
         </div>
     </footer>
 
-    <script src="scripts.js"></script> <!-- Reference to the external JS file -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggleButton = document.querySelector('.theme-toggle');
+            const body = document.body;
+
+            // Check for saved theme in localStorage
+            if (localStorage.getItem('theme') === 'dark') {
+                body.classList.add('dark-mode');
+                themeToggleButton.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+            }
+
+            // Toggle theme on button click
+            themeToggleButton.addEventListener('click', () => {
+                if (body.classList.contains('dark-mode')) {
+                    body.classList.remove('dark-mode');
+                    themeToggleButton.querySelector('i').classList.replace('fa-sun', 'fa-moon');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    body.classList.add('dark-mode');
+                    themeToggleButton.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+                    localStorage.setItem('theme', 'dark');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
