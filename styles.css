@@ -1,15 +1,33 @@
+/* Light Mode Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: right;
+    position: relative; /* Ensure proper positioning for the toggle button */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
 }
 
 nav {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 0.5rem 0;
+    text-align: right;
 }
 
 nav a {
@@ -20,17 +38,6 @@ nav a {
 
 nav a:hover {
     text-decoration: underline;
-}
-
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem 0;
-    text-align: center;
-}
-
-header h1 {
-    margin: 0;
 }
 
 .container {
@@ -89,4 +96,114 @@ footer {
     color: #fff;
     text-align: center;
     padding: 1rem 0;
+}
+
+.social-icons {
+    margin-top: 1rem;
+}
+
+.social-icon {
+    display: inline-block;
+    color: #fff;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.social-icon:hover {
+    color: #bbb;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #333;
+    color: #f4f4f4;
+}
+
+body.dark-mode header {
+    background-color: #222;
+}
+
+body.dark-mode nav a {
+    color: #f4f4f4;
+}
+
+body.dark-mode #projects .project {
+    background: #444;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode #contact form {
+    background: #444;
+}
+
+body.dark-mode footer {
+    background-color: #222;
+}
+
+body.dark-mode .social-icon {
+    color: #f4f4f4;
+}
+
+body.dark-mode .social-icon:hover {
+    color: #bbb;
+}
+
+/* Toggle Button */
+.theme-toggle {
+    position: relative; /* Ensure positioning */
+    width: 60px;
+    height: 34px;
+}
+
+.theme-toggle input {
+    opacity: 0; /* Hide default checkbox */
+    width: 0;
+    height: 0;
+}
+
+.theme-toggle .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.theme-toggle .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    background-color: white;
+    transition: .4s;
+    left: 4px;
+    bottom: 4px;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.slider .fa-sun, .slider .fa-moon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+.slider .fa-sun {
+    left: 10px;
+}
+
+.slider .fa-moon {
+    right: 10px;
 }

@@ -3,66 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Reference to the external CSS file -->
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
     <header>
         <div class="container">
-            <h1>My Portfolio</h1>
+            <h1>Rushikesh Satkar</h1>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="theme-toggle">
+                <input type="checkbox" id="toggle" />
+                <label for="toggle" class="slider">
+                    <span class="fa fa-sun"></span>
+                    <span class="fa fa-moon"></span>
+                </label>
+            </div>
         </div>
     </header>
-
-    <div class="container" id="about">
-        <h2>About Me</h2>
-        <img src="profile.jpg" alt="My Profile Picture" width="150">
-        <div>
-            <p>Hello! I'm a .NET backend developer with over 2 years of experience. I specialize in creating efficient and scalable backend systems. In my recent internship, I worked on .NET Core API development and created the backend of a Domino's-like website.</p>
-        </div>
+    <div class="container">
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <img src="profile.jpg" alt="Profile Picture" width="150" height="150">
+            <div>
+                <p>Hello! I'm Rushikesh Satkar, a passionate web developer with experience in creating dynamic and responsive websites. I specialize in .NET technologies and have worked on various projects that leverage modern development practices.</p>
+                <p>With a strong foundation in backend development, I enjoy solving complex problems and delivering high-quality solutions. In my free time, I like to stay updated with the latest technology trends and explore new tools and techniques.</p>
+            </div>
+        </section>
+        
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project">
+                <h3>Project One</h3>
+                <p>Description of project one, detailing the technologies used and the challenges faced.</p>
+            </div>
+            <div class="project">
+                <h3>Project Two</h3>
+                <p>Description of project two, including key features and any notable achievements.</p>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form action="submit_form.php" method="POST">
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <div>
+                    <input type="submit" value="Send Message">
+                </div>
+            </form>
+        </section>
     </div>
-
-    <div class="container" id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Project 1</h3>
-            <p>Description of the first project.</p>
-        </div>
-        <div class="project">
-            <h3>Project 2</h3>
-            <p>Description of the second project.</p>
-        </div>
-        <!-- Add more projects as needed -->
-    </div>
-
-    <div class="container" id="contact">
-        <h2>Contact Me</h2>
-        <form action="submit_form.php" method="post">
-            <div>
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div>
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div>
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-            </div>
-            <div>
-                <input type="submit" value="Send">
-            </div>
-        </form>
-    </div>
-
     <footer>
-        <p>&copy; 2024 My Portfolio</p>
+        <div class="social-icons">
+            <a href="https://github.com/yourusername" target="_blank" class="social-icon fa fa-github"></a>
+        </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
